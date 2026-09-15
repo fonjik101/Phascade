@@ -1,11 +1,17 @@
 extends Control
 
-@onready var item_cursor: CharacterBody2D = $Item_Cursor
-@onready var item_texture: AnimatedSprite2D = $Item_Cursor/Item_Texture
+@onready var high_score_label: Label = $HighScoreLabel
 
 func _ready() -> void:
-	item_texture.animation = "emf"
+	high_score_label.text = str(GlobalVars.high_score)
 
-func _process(delta: float) -> void:
-	item_cursor.global_position.x = clampf(get_global_mouse_position().x, 40, 500)
-	item_cursor.global_position.y = clampf(get_global_mouse_position().y, 40, 500)
+func _on_start_label_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/Main.tscn")
+
+
+func _on_credits_label_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_quit_label_pressed() -> void:
+	get_tree().quit()

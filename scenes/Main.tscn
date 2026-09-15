@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gk100ta4tugs"]
 
-[ext_resource type="Script" uid="uid://bydg2jufn560q" path="res://scripts/main.gd" id="1_wp0k4"]
+[ext_resource type="Script" uid="uid://cvovv2cj5hnd3" path="res://main.gd" id="1_ma7h6"]
 [ext_resource type="Texture2D" uid="uid://f65vr6n1fr1s" path="res://textures/backgrounds/background1.jpg" id="2_20pc6"]
 [ext_resource type="Texture2D" uid="uid://bfofhe2kjssb2" path="res://icon.svg" id="2_r0du0"]
 [ext_resource type="Shader" uid="uid://c8c41ugsy4vsp" path="res://shaders/Blur.gdshader" id="3_bjd11"]
@@ -12,9 +12,9 @@
 [ext_resource type="Script" uid="uid://b6x4bhn1ulpcv" path="res://scripts/point_2.gd" id="6_3p2gp"]
 [ext_resource type="Texture2D" uid="uid://ctrenvs8ite8f" path="res://textures/emf/emf_3.png" id="6_20pc6"]
 [ext_resource type="Texture2D" uid="uid://cuf7mp81opljd" path="res://textures/emf/emf_4.png" id="7_5vvyt"]
-[ext_resource type="Script" uid="uid://bg5uk8cj5qtpe" path="res://scripts/point_3.gd" id="7_cvmbd"]
 [ext_resource type="Texture2D" uid="uid://bj3qy5we5wtch" path="res://textures/uv/Handprint.png" id="7_yxlcp"]
 [ext_resource type="Texture2D" uid="uid://7ji7qp4w7jsx" path="res://textures/emf/emf_5.png" id="8_c6i3y"]
+[ext_resource type="Script" uid="uid://bg5uk8cj5qtpe" path="res://scripts/point_3.gd" id="8_fs0b5"]
 [ext_resource type="Texture2D" uid="uid://sbtpv2cfeke1" path="res://textures/emf/emf_icon.png" id="9_03owx"]
 [ext_resource type="Script" uid="uid://cbqvtvc1vos3o" path="res://scripts/point_4.gd" id="9_36rkl"]
 [ext_resource type="Shader" uid="uid://cwvdg4pswd1xr" path="res://shaders/vignette.gdshader" id="12_qmy6f"]
@@ -122,7 +122,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wp0k4")
+script = ExtResource("1_ma7h6")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1049714646]
 modulate = Color(0.3, 0.3, 0.3, 1)
@@ -176,46 +176,12 @@ shape = SubResource("CircleShape2D_5vvyt")
 [node name="Shape" type="CollisionShape2D" parent="Point1/Level5" unique_id=1286758971]
 shape = SubResource("CircleShape2D_6temw")
 
-[node name="Point2" type="Sprite2D" parent="." unique_id=355766221]
-position = Vector2(453.99997, 122)
-scale = Vector2(0.1, 0.1)
-script = ExtResource("6_3p2gp")
-
-[node name="Level1" type="Area2D" parent="Point2" unique_id=1946755390]
-
-[node name="Shape" type="CollisionShape2D" parent="Point2/Level1" unique_id=1183812793]
-shape = SubResource("CircleShape2D_03owx")
-
-[node name="Level2" type="Area2D" parent="Point2" unique_id=678112182]
-
-[node name="Shape" type="CollisionShape2D" parent="Point2/Level2" unique_id=370256982]
-shape = SubResource("CircleShape2D_wkp8b")
-
-[node name="Level3" type="Area2D" parent="Point2" unique_id=206364506]
-
-[node name="Shape" type="CollisionShape2D" parent="Point2/Level3" unique_id=597473198]
-shape = SubResource("CircleShape2D_20pc6")
-
-[node name="Level4" type="Area2D" parent="Point2" unique_id=1715807908]
-
-[node name="Shape" type="CollisionShape2D" parent="Point2/Level4" unique_id=1608153567]
-shape = SubResource("CircleShape2D_5vvyt")
-
-[node name="Level5" type="Area2D" parent="Point2" unique_id=1248765133]
-
-[node name="Shape" type="CollisionShape2D" parent="Point2/Level5" unique_id=913249834]
-shape = SubResource("CircleShape2D_6temw")
-
-[node name="Handprint" type="Sprite2D" parent="Point2" unique_id=912909334]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_yxlcp")
-
 [node name="Point3" type="Sprite2D" parent="." unique_id=1811136238]
 visible = false
 position = Vector2(294, 371)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_r0du0")
-script = ExtResource("7_cvmbd")
+script = ExtResource("8_fs0b5")
 
 [node name="Level1" type="Area2D" parent="Point3" unique_id=1558091343]
 
@@ -282,6 +248,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Point2" type="Sprite2D" parent="." unique_id=355766221]
+position = Vector2(453.99997, 122)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("6_3p2gp")
+
+[node name="Level1" type="Area2D" parent="Point2" unique_id=1946755390]
+
+[node name="Shape" type="CollisionShape2D" parent="Point2/Level1" unique_id=1183812793]
+shape = SubResource("CircleShape2D_03owx")
+
+[node name="Level2" type="Area2D" parent="Point2" unique_id=678112182]
+
+[node name="Shape" type="CollisionShape2D" parent="Point2/Level2" unique_id=370256982]
+shape = SubResource("CircleShape2D_wkp8b")
+
+[node name="Level3" type="Area2D" parent="Point2" unique_id=206364506]
+
+[node name="Shape" type="CollisionShape2D" parent="Point2/Level3" unique_id=597473198]
+shape = SubResource("CircleShape2D_20pc6")
+
+[node name="Level4" type="Area2D" parent="Point2" unique_id=1715807908]
+
+[node name="Shape" type="CollisionShape2D" parent="Point2/Level4" unique_id=1608153567]
+shape = SubResource("CircleShape2D_5vvyt")
+
+[node name="Level5" type="Area2D" parent="Point2" unique_id=1248765133]
+
+[node name="Shape" type="CollisionShape2D" parent="Point2/Level5" unique_id=913249834]
+shape = SubResource("CircleShape2D_6temw")
+
+[node name="Handprint" type="Sprite2D" parent="Point2" unique_id=912909334]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_yxlcp")
 
 [node name="Item_Cursor" type="CharacterBody2D" parent="." unique_id=64777036 groups=["item"]]
 
@@ -390,11 +390,12 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Time_Label" type="Label" parent="." unique_id=1831973052]
+[node name="TimeLabel" type="Label" parent="." unique_id=1831973052]
 layout_mode = 1
 anchors_preset = -1
+anchor_top = 0.044444446
 anchor_right = 1.0
-anchor_bottom = 0.042592593
+anchor_bottom = 0.087037034
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("23_fs0b5")
 text = "00:00"
@@ -403,8 +404,20 @@ vertical_alignment = 1
 script = ExtResource("23_ebg2g")
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="Time_Label" unique_id=1084312782]
+[node name="Timer" type="Timer" parent="TimeLabel" unique_id=1084312782]
 autostart = true
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=247007685]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.042592593
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("23_fs0b5")
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="EmfCheck" type="CheckBox" parent="." unique_id=135299790]
 layout_mode = 1
@@ -441,6 +454,23 @@ button_mask = 0
 text = "Freezing Temp (0/2)"
 metadata/_edit_use_anchors_ = true
 
+[node name="NextLabel" type="Button" parent="." unique_id=456695898]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.78518516
+anchor_right = 1.0
+anchor_bottom = 0.88148147
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.69965345, 0.69965345, 0.69965345, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("23_fs0b5")
+theme_override_font_sizes/font_size = 40
+text = "next level"
+flat = true
+metadata/_edit_use_anchors_ = true
+
 [connection signal="body_entered" from="Point1/Level1" to="Point1" method="_on_level_1_body_entered"]
 [connection signal="body_exited" from="Point1/Level1" to="Point1" method="_on_level_1_body_exited"]
 [connection signal="body_entered" from="Point1/Level2" to="Point1" method="_on_level_2_body_entered"]
@@ -451,16 +481,6 @@ metadata/_edit_use_anchors_ = true
 [connection signal="body_exited" from="Point1/Level4" to="Point1" method="_on_level_4_body_exited"]
 [connection signal="body_entered" from="Point1/Level5" to="Point1" method="_on_level_5_body_entered"]
 [connection signal="body_exited" from="Point1/Level5" to="Point1" method="_on_level_5_body_exited"]
-[connection signal="body_entered" from="Point2/Level1" to="Point2" method="_on_level_1_body_entered"]
-[connection signal="body_exited" from="Point2/Level1" to="Point2" method="_on_level_1_body_exited"]
-[connection signal="body_entered" from="Point2/Level2" to="Point2" method="_on_level_2_body_entered"]
-[connection signal="body_exited" from="Point2/Level2" to="Point2" method="_on_level_2_body_exited"]
-[connection signal="body_entered" from="Point2/Level3" to="Point2" method="_on_level_3_body_entered"]
-[connection signal="body_exited" from="Point2/Level3" to="Point2" method="_on_level_3_body_exited"]
-[connection signal="body_entered" from="Point2/Level4" to="Point2" method="_on_level_4_body_entered"]
-[connection signal="body_exited" from="Point2/Level4" to="Point2" method="_on_level_4_body_exited"]
-[connection signal="body_entered" from="Point2/Level5" to="Point2" method="_on_level_5_body_entered"]
-[connection signal="body_exited" from="Point2/Level5" to="Point2" method="_on_level_5_body_exited"]
 [connection signal="body_entered" from="Point3/Level1" to="Point3" method="_on_level_1_body_entered"]
 [connection signal="body_exited" from="Point3/Level1" to="Point3" method="_on_level_1_body_exited"]
 [connection signal="body_entered" from="Point3/Level2" to="Point3" method="_on_level_2_body_entered"]
@@ -481,9 +501,20 @@ metadata/_edit_use_anchors_ = true
 [connection signal="body_exited" from="Point4/Level4" to="Point4" method="_on_level_4_body_exited"]
 [connection signal="body_entered" from="Point4/Level5" to="Point4" method="_on_level_5_body_entered"]
 [connection signal="body_exited" from="Point4/Level5" to="Point4" method="_on_level_5_body_exited"]
+[connection signal="body_entered" from="Point2/Level1" to="Point2" method="_on_level_1_body_entered"]
+[connection signal="body_exited" from="Point2/Level1" to="Point2" method="_on_level_1_body_exited"]
+[connection signal="body_entered" from="Point2/Level2" to="Point2" method="_on_level_2_body_entered"]
+[connection signal="body_exited" from="Point2/Level2" to="Point2" method="_on_level_2_body_exited"]
+[connection signal="body_entered" from="Point2/Level3" to="Point2" method="_on_level_3_body_entered"]
+[connection signal="body_exited" from="Point2/Level3" to="Point2" method="_on_level_3_body_exited"]
+[connection signal="body_entered" from="Point2/Level4" to="Point2" method="_on_level_4_body_entered"]
+[connection signal="body_exited" from="Point2/Level4" to="Point2" method="_on_level_4_body_exited"]
+[connection signal="body_entered" from="Point2/Level5" to="Point2" method="_on_level_5_body_entered"]
+[connection signal="body_exited" from="Point2/Level5" to="Point2" method="_on_level_5_body_exited"]
 [connection signal="pressed" from="Item_Button1" to="." method="_on_item_button_1_pressed"]
 [connection signal="pressed" from="Item_Button2" to="." method="_on_item_button_2_pressed"]
 [connection signal="pressed" from="Item_Button3" to="." method="_on_item_button_3_pressed"]
 [connection signal="pressed" from="Item_Button4" to="." method="_on_item_button_4_pressed"]
 [connection signal="pressed" from="Item_Button5" to="." method="_on_item_button_5_pressed"]
-[connection signal="timeout" from="Time_Label/Timer" to="Time_Label" method="_on_timer_timeout"]
+[connection signal="timeout" from="TimeLabel/Timer" to="TimeLabel" method="_on_timer_timeout"]
+[connection signal="pressed" from="NextLabel" to="." method="_on_next_label_pressed"]

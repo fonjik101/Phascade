@@ -1,12 +1,12 @@
 extends Label
 
-var total_seconds: int = 0
+var total_seconds: int = 120
 
 func _ready() -> void:
 	_update_label()
 
 func _on_timer_timeout() -> void:
-	total_seconds += 1
+	total_seconds -= 1
 	_update_label()
 
 func _update_label() -> void:

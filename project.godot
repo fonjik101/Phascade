@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Phasmo Arcade"
-run/main_scene="uid://gk100ta4tugs"
+run/main_scene="uid://c784cylfva0t3"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalVars="*uid://dxvfmfei25bij"
 
 [display]
 
