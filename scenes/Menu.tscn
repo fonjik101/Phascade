@@ -1,0 +1,255 @@
+[gd_scene format=3 uid="uid://c784cylfva0t3"]
+
+[ext_resource type="Script" uid="uid://nbaeo34b5mb3" path="res://scripts/menu.gd" id="1_7t7qg"]
+[ext_resource type="Texture2D" uid="uid://f65vr6n1fr1s" path="res://textures/backgrounds/background1.jpg" id="1_aaywf"]
+[ext_resource type="FontFile" uid="uid://da1qq31tovvf5" path="res://DS-DIGI.TTF" id="1_xdvgc"]
+[ext_resource type="Texture2D" uid="uid://bloj4df502exw" path="res://textures/backgrounds/background2.jpg" id="3_yt8fu"]
+[ext_resource type="Texture2D" uid="uid://b61jlerbtixbh" path="res://textures/backgrounds/background3.jpg" id="4_4umqm"]
+[ext_resource type="Texture2D" uid="uid://w1n21taba3bd" path="res://textures/backgrounds/background4.jpg" id="5_pp5m5"]
+[ext_resource type="Shader" uid="uid://c8c41ugsy4vsp" path="res://shaders/Blur.gdshader" id="6_el213"]
+[ext_resource type="Texture2D" uid="uid://cd7fc7rfl887a" path="res://textures/emf/emf_0.png" id="8_l3wcu"]
+[ext_resource type="Texture2D" uid="uid://b3v2uiu73qmir" path="res://textures/emf/emf_1.png" id="9_i7htd"]
+[ext_resource type="Texture2D" uid="uid://cmn3dnc1fi7s3" path="res://textures/emf/emf_2.png" id="10_dek3k"]
+[ext_resource type="Texture2D" uid="uid://ctrenvs8ite8f" path="res://textures/emf/emf_3.png" id="11_8fhjo"]
+[ext_resource type="Texture2D" uid="uid://cuf7mp81opljd" path="res://textures/emf/emf_4.png" id="12_760fv"]
+[ext_resource type="Texture2D" uid="uid://7ji7qp4w7jsx" path="res://textures/emf/emf_5.png" id="13_rehui"]
+[ext_resource type="Texture2D" uid="uid://ce6s2q2w0t7hc" path="res://textures/thermo/thermo.png" id="14_yvxia"]
+[ext_resource type="Texture2D" uid="uid://dhmdaepemcd4g" path="res://textures/uv/uv1.png" id="15_nxcfj"]
+[ext_resource type="Texture2D" uid="uid://c6uxyc8den6ol" path="res://textures/uv/uv2.png" id="16_uwbky"]
+[ext_resource type="Texture2D" uid="uid://66x7n4dgswsc" path="res://textures/uv/uv3.png" id="17_r54wa"]
+[ext_resource type="Texture2D" uid="uid://dowcrsubi6jmo" path="res://textures/uv/uv4.png" id="18_uds2g"]
+[ext_resource type="Texture2D" uid="uid://dmu1vlhhuleg2" path="res://textures/uv/uv5.png" id="19_jvsdq"]
+
+[sub_resource type="Animation" id="Animation_thu7x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.3, 0.3, 0.3, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_aaywf")]
+}
+
+[sub_resource type="Animation" id="Animation_2af52"]
+resource_name = "background"
+length = 20.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.9, 5, 9.9, 10, 14.9, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-8, 0), Vector2(-8, -105), Vector2(-8, 0), Vector2(-8, -105), Vector2(-8, 0), Vector2(-8, -105), Vector2(-8, 0), Vector2(-8, -105)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4, 4.9, 5, 6, 9, 9.9, 10, 11, 14, 14.9, 15, 16, 19, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.3, 0.3, 0.3, 1), Color(0.3, 0.3, 0.3, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.3, 0.3, 0.3, 1), Color(0.3, 0.3, 0.3, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.3, 0.3, 0.3, 1), Color(0.3, 0.3, 0.3, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.3, 0.3, 0.3, 1), Color(0.3, 0.3, 0.3, 1), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5, 10, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_aaywf"), ExtResource("3_yt8fu"), ExtResource("4_4umqm"), ExtResource("5_pp5m5")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ycwl"]
+_data = {
+&"RESET": SubResource("Animation_thu7x"),
+&"background": SubResource("Animation_2af52")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtd1e"]
+shader = ExtResource("6_el213")
+shader_parameter/lod = 2.0000000298024
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m74h7"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"camera",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_l3wcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i7htd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dek3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8fhjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_760fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rehui")
+}],
+"loop": 1,
+"name": &"emf",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_yvxia")
+}],
+"loop": 1,
+"name": &"thermo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_nxcfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uwbky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_r54wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_uds2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jvsdq")
+}],
+"loop": 1,
+"name": &"uv",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gut0v"]
+
+[node name="Control" type="Control" unique_id=1788915878]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7t7qg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1503885220]
+modulate = Color(0.3, 0.3, 0.3, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_aaywf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect" unique_id=1609975073]
+libraries/ = SubResource("AnimationLibrary_7ycwl")
+autoplay = &"background"
+speed_scale = 0.5
+
+[node name="BlurRect" type="ColorRect" parent="." unique_id=1949626127]
+material = SubResource("ShaderMaterial_rtd1e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=732646040]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.36296296
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 13
+theme_override_fonts/font = ExtResource("1_xdvgc")
+theme_override_font_sizes/font_size = 90
+text = "phascade"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Item_Cursor" type="CharacterBody2D" parent="." unique_id=1096097812 groups=["item"]]
+
+[node name="Item_Texture" type="AnimatedSprite2D" parent="Item_Cursor" unique_id=2041914412]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_m74h7")
+animation = &"emf"
+
+[node name="Collision" type="CollisionShape2D" parent="Item_Cursor" unique_id=1066546857]
+shape = SubResource("RectangleShape2D_gut0v")
+
+[node name="Temp_Label" type="Label" parent="Item_Cursor" unique_id=849660486]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -48.0
+offset_right = 10.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_xdvgc")
+theme_override_font_sizes/font_size = 12
+text = "-10"
+horizontal_alignment = 1
+vertical_alignment = 1

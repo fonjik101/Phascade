@@ -1,0 +1,489 @@
+[gd_scene format=3 uid="uid://gk100ta4tugs"]
+
+[ext_resource type="Script" uid="uid://bydg2jufn560q" path="res://scripts/main.gd" id="1_wp0k4"]
+[ext_resource type="Texture2D" uid="uid://f65vr6n1fr1s" path="res://textures/backgrounds/background1.jpg" id="2_20pc6"]
+[ext_resource type="Texture2D" uid="uid://bfofhe2kjssb2" path="res://icon.svg" id="2_r0du0"]
+[ext_resource type="Shader" uid="uid://c8c41ugsy4vsp" path="res://shaders/Blur.gdshader" id="3_bjd11"]
+[ext_resource type="Script" uid="uid://cr5gemhqiwe2i" path="res://scenes/background.gd" id="3_ma7h6"]
+[ext_resource type="Texture2D" uid="uid://cd7fc7rfl887a" path="res://textures/emf/emf_0.png" id="3_trn2v"]
+[ext_resource type="Texture2D" uid="uid://b3v2uiu73qmir" path="res://textures/emf/emf_1.png" id="4_03owx"]
+[ext_resource type="Script" uid="uid://cxuk5k4s83lvr" path="res://scripts/point_1.gd" id="4_bjd11"]
+[ext_resource type="Texture2D" uid="uid://cmn3dnc1fi7s3" path="res://textures/emf/emf_2.png" id="5_wkp8b"]
+[ext_resource type="Script" uid="uid://b6x4bhn1ulpcv" path="res://scripts/point_2.gd" id="6_3p2gp"]
+[ext_resource type="Texture2D" uid="uid://ctrenvs8ite8f" path="res://textures/emf/emf_3.png" id="6_20pc6"]
+[ext_resource type="Texture2D" uid="uid://cuf7mp81opljd" path="res://textures/emf/emf_4.png" id="7_5vvyt"]
+[ext_resource type="Script" uid="uid://bg5uk8cj5qtpe" path="res://scripts/point_3.gd" id="7_cvmbd"]
+[ext_resource type="Texture2D" uid="uid://bj3qy5we5wtch" path="res://textures/uv/Handprint.png" id="7_yxlcp"]
+[ext_resource type="Texture2D" uid="uid://7ji7qp4w7jsx" path="res://textures/emf/emf_5.png" id="8_c6i3y"]
+[ext_resource type="Texture2D" uid="uid://sbtpv2cfeke1" path="res://textures/emf/emf_icon.png" id="9_03owx"]
+[ext_resource type="Script" uid="uid://cbqvtvc1vos3o" path="res://scripts/point_4.gd" id="9_36rkl"]
+[ext_resource type="Shader" uid="uid://cwvdg4pswd1xr" path="res://shaders/vignette.gdshader" id="12_qmy6f"]
+[ext_resource type="Texture2D" uid="uid://dhmdaepemcd4g" path="res://textures/uv/uv1.png" id="15_1iba3"]
+[ext_resource type="Texture2D" uid="uid://uawv26a2lbel" path="res://textures/uv/uv_icon.png" id="16_cvmbd"]
+[ext_resource type="Texture2D" uid="uid://ce6s2q2w0t7hc" path="res://textures/thermo/thermo.png" id="16_xa025"]
+[ext_resource type="Texture2D" uid="uid://c6uxyc8den6ol" path="res://textures/uv/uv2.png" id="16_yxlcp"]
+[ext_resource type="Texture2D" uid="uid://66x7n4dgswsc" path="res://textures/uv/uv3.png" id="17_ebg2g"]
+[ext_resource type="Texture2D" uid="uid://dowcrsubi6jmo" path="res://textures/uv/uv4.png" id="18_2ofn6"]
+[ext_resource type="Texture2D" uid="uid://dmu1vlhhuleg2" path="res://textures/uv/uv5.png" id="19_xa025"]
+[ext_resource type="Script" uid="uid://doecqbdk7617m" path="res://scenes/time_counter.gd" id="23_ebg2g"]
+[ext_resource type="FontFile" uid="uid://da1qq31tovvf5" path="res://DS-DIGI.TTF" id="23_fs0b5"]
+[ext_resource type="Texture2D" uid="uid://cklvr1qd83sxd" path="res://textures/thermo/thermo_icon.png" id="24_36rkl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmy6f"]
+shader = ExtResource("3_bjd11")
+shader_parameter/lod = 2.0000000298024
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_03owx"]
+radius = 1250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wkp8b"]
+radius = 1000.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_20pc6"]
+radius = 750.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vvyt"]
+radius = 500.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6temw"]
+radius = 250.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gsxep"]
+shader = ExtResource("12_qmy6f")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6temw"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"camera",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_trn2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_03owx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wkp8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_20pc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5vvyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c6i3y")
+}],
+"loop": 1,
+"name": &"emf",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_xa025")
+}],
+"loop": 1,
+"name": &"thermo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_1iba3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yxlcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ebg2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2ofn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xa025")
+}],
+"loop": 1,
+"name": &"uv",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6temw"]
+
+[node name="Main_Node" type="Control" unique_id=1905751114]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wp0k4")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1049714646]
+modulate = Color(0.3, 0.3, 0.3, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_20pc6")
+script = ExtResource("3_ma7h6")
+
+[node name="BlurRect" type="ColorRect" parent="." unique_id=2062259047]
+material = SubResource("ShaderMaterial_qmy6f")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Point1" type="Sprite2D" parent="." unique_id=1866922068]
+visible = false
+position = Vector2(130, 151)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_r0du0")
+script = ExtResource("4_bjd11")
+
+[node name="Level1" type="Area2D" parent="Point1" unique_id=1016704700]
+
+[node name="Shape" type="CollisionShape2D" parent="Point1/Level1" unique_id=1272411919]
+shape = SubResource("CircleShape2D_03owx")
+
+[node name="Level2" type="Area2D" parent="Point1" unique_id=418154560]
+
+[node name="Shape" type="CollisionShape2D" parent="Point1/Level2" unique_id=1046721904]
+shape = SubResource("CircleShape2D_wkp8b")
+
+[node name="Level3" type="Area2D" parent="Point1" unique_id=101301195]
+
+[node name="Shape" type="CollisionShape2D" parent="Point1/Level3" unique_id=2005487993]
+shape = SubResource("CircleShape2D_20pc6")
+
+[node name="Level4" type="Area2D" parent="Point1" unique_id=1208037321]
+
+[node name="Shape" type="CollisionShape2D" parent="Point1/Level4" unique_id=1423363704]
+shape = SubResource("CircleShape2D_5vvyt")
+
+[node name="Level5" type="Area2D" parent="Point1" unique_id=343924272]
+
+[node name="Shape" type="CollisionShape2D" parent="Point1/Level5" unique_id=1286758971]
+shape = SubResource("CircleShape2D_6temw")
+
+[node name="Point2" type="Sprite2D" parent="." unique_id=355766221]
+position = Vector2(453.99997, 122)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("6_3p2gp")
+
+[node name="Level1" type="Area2D" parent="Point2" unique_id=1946755390]
+
+[node name="Shape" type="CollisionShape2D" parent="Point2/Level1" unique_id=1183812793]
+shape = SubResource("CircleShape2D_03owx")
+
+[node name="Level2" type="Area2D" parent="Point2" unique_id=678112182]
+
+[node name="Shape" type="CollisionShape2D" parent="Point2/Level2" unique_id=370256982]
+shape = SubResource("CircleShape2D_wkp8b")
+
+[node name="Level3" type="Area2D" parent="Point2" unique_id=206364506]
+
+[node name="Shape" type="CollisionShape2D" parent="Point2/Level3" unique_id=597473198]
+shape = SubResource("CircleShape2D_20pc6")
+
+[node name="Level4" type="Area2D" parent="Point2" unique_id=1715807908]
+
+[node name="Shape" type="CollisionShape2D" parent="Point2/Level4" unique_id=1608153567]
+shape = SubResource("CircleShape2D_5vvyt")
+
+[node name="Level5" type="Area2D" parent="Point2" unique_id=1248765133]
+
+[node name="Shape" type="CollisionShape2D" parent="Point2/Level5" unique_id=913249834]
+shape = SubResource("CircleShape2D_6temw")
+
+[node name="Handprint" type="Sprite2D" parent="Point2" unique_id=912909334]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_yxlcp")
+
+[node name="Point3" type="Sprite2D" parent="." unique_id=1811136238]
+visible = false
+position = Vector2(294, 371)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_r0du0")
+script = ExtResource("7_cvmbd")
+
+[node name="Level1" type="Area2D" parent="Point3" unique_id=1558091343]
+
+[node name="Shape" type="CollisionShape2D" parent="Point3/Level1" unique_id=1021354050]
+shape = SubResource("CircleShape2D_03owx")
+
+[node name="Level2" type="Area2D" parent="Point3" unique_id=1222643283]
+
+[node name="Shape" type="CollisionShape2D" parent="Point3/Level2" unique_id=473246853]
+shape = SubResource("CircleShape2D_wkp8b")
+
+[node name="Level3" type="Area2D" parent="Point3" unique_id=362343923]
+
+[node name="Shape" type="CollisionShape2D" parent="Point3/Level3" unique_id=208255519]
+shape = SubResource("CircleShape2D_20pc6")
+
+[node name="Level4" type="Area2D" parent="Point3" unique_id=321149877]
+
+[node name="Shape" type="CollisionShape2D" parent="Point3/Level4" unique_id=1923187135]
+shape = SubResource("CircleShape2D_5vvyt")
+
+[node name="Level5" type="Area2D" parent="Point3" unique_id=1300443583]
+
+[node name="Shape" type="CollisionShape2D" parent="Point3/Level5" unique_id=261296326]
+shape = SubResource("CircleShape2D_6temw")
+
+[node name="Point4" type="Sprite2D" parent="." unique_id=61256686]
+visible = false
+position = Vector2(294, 371)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_r0du0")
+script = ExtResource("9_36rkl")
+
+[node name="Level1" type="Area2D" parent="Point4" unique_id=571058027]
+
+[node name="Shape" type="CollisionShape2D" parent="Point4/Level1" unique_id=1307888893]
+shape = SubResource("CircleShape2D_03owx")
+
+[node name="Level2" type="Area2D" parent="Point4" unique_id=1043124925]
+
+[node name="Shape" type="CollisionShape2D" parent="Point4/Level2" unique_id=1976170542]
+shape = SubResource("CircleShape2D_wkp8b")
+
+[node name="Level3" type="Area2D" parent="Point4" unique_id=950883318]
+
+[node name="Shape" type="CollisionShape2D" parent="Point4/Level3" unique_id=2094987865]
+shape = SubResource("CircleShape2D_20pc6")
+
+[node name="Level4" type="Area2D" parent="Point4" unique_id=1757268767]
+
+[node name="Shape" type="CollisionShape2D" parent="Point4/Level4" unique_id=1247644526]
+shape = SubResource("CircleShape2D_5vvyt")
+
+[node name="Level5" type="Area2D" parent="Point4" unique_id=336664956]
+
+[node name="Shape" type="CollisionShape2D" parent="Point4/Level5" unique_id=760990312]
+shape = SubResource("CircleShape2D_6temw")
+
+[node name="VignetteRect" type="ColorRect" parent="." unique_id=870257659]
+material = SubResource("ShaderMaterial_gsxep")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item_Cursor" type="CharacterBody2D" parent="." unique_id=64777036 groups=["item"]]
+
+[node name="Item_Texture" type="AnimatedSprite2D" parent="Item_Cursor" unique_id=1295675188]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_6temw")
+animation = &"thermo"
+
+[node name="Collision" type="CollisionShape2D" parent="Item_Cursor" unique_id=1296552285]
+shape = SubResource("RectangleShape2D_6temw")
+
+[node name="Temp_Label" type="Label" parent="Item_Cursor" unique_id=1542662996]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -48.0
+offset_right = 10.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("23_fs0b5")
+theme_override_font_sizes/font_size = 12
+text = "-10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item_Button1" type="Button" parent="." unique_id=962513316]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027777778
+anchor_top = 0.8888889
+anchor_right = 0.1388889
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("9_03owx")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Item_Button2" type="Button" parent="." unique_id=1695142856]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19444445
+anchor_top = 0.8888889
+anchor_right = 0.30555555
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("16_cvmbd")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Item_Button3" type="Button" parent="." unique_id=425090343]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3611111
+anchor_top = 0.8888889
+anchor_right = 0.4722222
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("24_36rkl")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Item_Button4" type="Button" parent="." unique_id=33406707]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6944444
+anchor_top = 0.8888889
+anchor_right = 0.8055556
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("2_r0du0")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Item_Button5" type="Button" parent="." unique_id=1428831695]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8611111
+anchor_top = 0.8888889
+anchor_right = 0.9722222
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("2_r0du0")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Item_Button5" unique_id=409042951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("23_fs0b5")
+theme_override_font_sizes/font_size = 36
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time_Label" type="Label" parent="." unique_id=1831973052]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.042592593
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("23_fs0b5")
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("23_ebg2g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="Time_Label" unique_id=1084312782]
+autostart = true
+
+[node name="EmfCheck" type="CheckBox" parent="." unique_id=135299790]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.05740741
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("23_fs0b5")
+button_mask = 0
+text = "EMF Level 5"
+metadata/_edit_use_anchors_ = true
+
+[node name="UvCheck" type="CheckBox" parent="." unique_id=1084960230]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.05925926
+anchor_right = 1.0
+anchor_bottom = 0.11666667
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("23_fs0b5")
+button_mask = 0
+text = "UV Handprint"
+metadata/_edit_use_anchors_ = true
+
+[node name="TempCheck" type="CheckBox" parent="." unique_id=1307825488]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.11851852
+anchor_right = 1.0
+anchor_bottom = 0.17592593
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("23_fs0b5")
+button_mask = 0
+text = "Freezing Temp (0/2)"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Point1/Level1" to="Point1" method="_on_level_1_body_entered"]
+[connection signal="body_exited" from="Point1/Level1" to="Point1" method="_on_level_1_body_exited"]
+[connection signal="body_entered" from="Point1/Level2" to="Point1" method="_on_level_2_body_entered"]
+[connection signal="body_exited" from="Point1/Level2" to="Point1" method="_on_level_2_body_exited"]
+[connection signal="body_entered" from="Point1/Level3" to="Point1" method="_on_level_3_body_entered"]
+[connection signal="body_exited" from="Point1/Level3" to="Point1" method="_on_level_3_body_exited"]
+[connection signal="body_entered" from="Point1/Level4" to="Point1" method="_on_level_4_body_entered"]
+[connection signal="body_exited" from="Point1/Level4" to="Point1" method="_on_level_4_body_exited"]
+[connection signal="body_entered" from="Point1/Level5" to="Point1" method="_on_level_5_body_entered"]
+[connection signal="body_exited" from="Point1/Level5" to="Point1" method="_on_level_5_body_exited"]
+[connection signal="body_entered" from="Point2/Level1" to="Point2" method="_on_level_1_body_entered"]
+[connection signal="body_exited" from="Point2/Level1" to="Point2" method="_on_level_1_body_exited"]
+[connection signal="body_entered" from="Point2/Level2" to="Point2" method="_on_level_2_body_entered"]
+[connection signal="body_exited" from="Point2/Level2" to="Point2" method="_on_level_2_body_exited"]
+[connection signal="body_entered" from="Point2/Level3" to="Point2" method="_on_level_3_body_entered"]
+[connection signal="body_exited" from="Point2/Level3" to="Point2" method="_on_level_3_body_exited"]
+[connection signal="body_entered" from="Point2/Level4" to="Point2" method="_on_level_4_body_entered"]
+[connection signal="body_exited" from="Point2/Level4" to="Point2" method="_on_level_4_body_exited"]
+[connection signal="body_entered" from="Point2/Level5" to="Point2" method="_on_level_5_body_entered"]
+[connection signal="body_exited" from="Point2/Level5" to="Point2" method="_on_level_5_body_exited"]
+[connection signal="body_entered" from="Point3/Level1" to="Point3" method="_on_level_1_body_entered"]
+[connection signal="body_exited" from="Point3/Level1" to="Point3" method="_on_level_1_body_exited"]
+[connection signal="body_entered" from="Point3/Level2" to="Point3" method="_on_level_2_body_entered"]
+[connection signal="body_exited" from="Point3/Level2" to="Point3" method="_on_level_2_body_exited"]
+[connection signal="body_entered" from="Point3/Level3" to="Point3" method="_on_level_3_body_entered"]
+[connection signal="body_exited" from="Point3/Level3" to="Point3" method="_on_level_3_body_exited"]
+[connection signal="body_entered" from="Point3/Level4" to="Point3" method="_on_level_4_body_entered"]
+[connection signal="body_exited" from="Point3/Level4" to="Point3" method="_on_level_4_body_exited"]
+[connection signal="body_entered" from="Point3/Level5" to="Point3" method="_on_level_5_body_entered"]
+[connection signal="body_exited" from="Point3/Level5" to="Point3" method="_on_level_5_body_exited"]
+[connection signal="body_entered" from="Point4/Level1" to="Point4" method="_on_level_1_body_entered"]
+[connection signal="body_exited" from="Point4/Level1" to="Point4" method="_on_level_1_body_exited"]
+[connection signal="body_entered" from="Point4/Level2" to="Point4" method="_on_level_2_body_entered"]
+[connection signal="body_exited" from="Point4/Level2" to="Point4" method="_on_level_2_body_exited"]
+[connection signal="body_entered" from="Point4/Level3" to="Point4" method="_on_level_3_body_entered"]
+[connection signal="body_exited" from="Point4/Level3" to="Point4" method="_on_level_3_body_exited"]
+[connection signal="body_entered" from="Point4/Level4" to="Point4" method="_on_level_4_body_entered"]
+[connection signal="body_exited" from="Point4/Level4" to="Point4" method="_on_level_4_body_exited"]
+[connection signal="body_entered" from="Point4/Level5" to="Point4" method="_on_level_5_body_entered"]
+[connection signal="body_exited" from="Point4/Level5" to="Point4" method="_on_level_5_body_exited"]
+[connection signal="pressed" from="Item_Button1" to="." method="_on_item_button_1_pressed"]
+[connection signal="pressed" from="Item_Button2" to="." method="_on_item_button_2_pressed"]
+[connection signal="pressed" from="Item_Button3" to="." method="_on_item_button_3_pressed"]
+[connection signal="pressed" from="Item_Button4" to="." method="_on_item_button_4_pressed"]
+[connection signal="pressed" from="Item_Button5" to="." method="_on_item_button_5_pressed"]
+[connection signal="timeout" from="Time_Label/Timer" to="Time_Label" method="_on_timer_timeout"]
