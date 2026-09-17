@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gk100ta4tugs"]
 
-[ext_resource type="Script" uid="uid://cvovv2cj5hnd3" path="res://main.gd" id="1_ma7h6"]
+[ext_resource type="Script" uid="uid://cvovv2cj5hnd3" path="res://scripts/main.gd" id="1_ma7h6"]
 [ext_resource type="Texture2D" uid="uid://f65vr6n1fr1s" path="res://textures/backgrounds/background1.jpg" id="2_20pc6"]
 [ext_resource type="Texture2D" uid="uid://bfofhe2kjssb2" path="res://icon.svg" id="2_r0du0"]
 [ext_resource type="Shader" uid="uid://c8c41ugsy4vsp" path="res://shaders/Blur.gdshader" id="3_bjd11"]
@@ -28,6 +28,10 @@
 [ext_resource type="Script" uid="uid://doecqbdk7617m" path="res://scenes/time_counter.gd" id="23_ebg2g"]
 [ext_resource type="FontFile" uid="uid://da1qq31tovvf5" path="res://DS-DIGI.TTF" id="23_fs0b5"]
 [ext_resource type="Texture2D" uid="uid://cklvr1qd83sxd" path="res://textures/thermo/thermo_icon.png" id="24_36rkl"]
+[ext_resource type="Shader" uid="uid://dl8au5ica6f5r" path="res://shaders/Pixelate.gdshader" id="29_e2s0e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6temw"]
+radius = 100.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qmy6f"]
 shader = ExtResource("3_bjd11")
@@ -45,9 +49,6 @@ radius = 750.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_5vvyt"]
 radius = 500.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6temw"]
-radius = 250.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gsxep"]
 shader = ExtResource("12_qmy6f")
 shader_parameter/alpha = 1.0
@@ -56,11 +57,6 @@ shader_parameter/outer_radius = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6temw"]
 animations = [{
-"frames": [],
-"loop": 1,
-"name": &"camera",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_trn2v")
@@ -115,6 +111,11 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6temw"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v0vrg"]
+shader = ExtResource("29_e2s0e")
+shader_parameter/pixelation = 0.002000000095
+shader_parameter/opacity = 1.0
+
 [node name="Main_Node" type="Control" unique_id=1905751114]
 layout_mode = 3
 anchors_preset = 15
@@ -123,6 +124,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ma7h6")
+
+[node name="PointGhost" type="Sprite2D" parent="." unique_id=20355741]
+position = Vector2(453.99997, 122)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_r0du0")
+script = ExtResource("6_3p2gp")
+
+[node name="Level5" type="Area2D" parent="PointGhost" unique_id=566938187]
+
+[node name="Shape" type="CollisionShape2D" parent="PointGhost/Level5" unique_id=1857057291]
+shape = SubResource("CircleShape2D_6temw")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1049714646]
 modulate = Color(0.3, 0.3, 0.3, 1)
@@ -143,6 +155,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Black_Rect" type="ColorRect" parent="." unique_id=90707691]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Point1" type="Sprite2D" parent="." unique_id=1866922068]
 visible = false
@@ -250,6 +272,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Point2" type="Sprite2D" parent="." unique_id=355766221]
+visible = false
 position = Vector2(453.99997, 122)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("6_3p2gp")
@@ -284,11 +307,12 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_yxlcp")
 
 [node name="Item_Cursor" type="CharacterBody2D" parent="." unique_id=64777036 groups=["item"]]
+visible = false
 
 [node name="Item_Texture" type="AnimatedSprite2D" parent="Item_Cursor" unique_id=1295675188]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_6temw")
-animation = &"thermo"
+animation = &"emf"
 
 [node name="Collision" type="CollisionShape2D" parent="Item_Cursor" unique_id=1296552285]
 shape = SubResource("RectangleShape2D_6temw")
@@ -310,6 +334,8 @@ theme_override_font_sizes/font_size = 12
 text = "-10"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Item_Cursor2" type="Sprite2D" parent="." unique_id=460591383]
 
 [node name="Item_Button1" type="Button" parent="." unique_id=962513316]
 layout_mode = 1
@@ -471,6 +497,17 @@ text = "next level"
 flat = true
 metadata/_edit_use_anchors_ = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=745592688]
+
+[node name="Pixel" type="ColorRect" parent="CanvasLayer" unique_id=829676154]
+material = SubResource("ShaderMaterial_v0vrg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [connection signal="body_entered" from="Point1/Level1" to="Point1" method="_on_level_1_body_entered"]
 [connection signal="body_exited" from="Point1/Level1" to="Point1" method="_on_level_1_body_exited"]
 [connection signal="body_entered" from="Point1/Level2" to="Point1" method="_on_level_2_body_entered"]
@@ -516,5 +553,6 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Item_Button3" to="." method="_on_item_button_3_pressed"]
 [connection signal="pressed" from="Item_Button4" to="." method="_on_item_button_4_pressed"]
 [connection signal="pressed" from="Item_Button5" to="." method="_on_item_button_5_pressed"]
+[connection signal="timeout" from="TimeLabel/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TimeLabel/Timer" to="TimeLabel" method="_on_timer_timeout"]
 [connection signal="pressed" from="NextLabel" to="." method="_on_next_label_pressed"]

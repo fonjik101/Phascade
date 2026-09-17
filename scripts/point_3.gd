@@ -2,7 +2,7 @@ extends Sprite2D
 
 @onready var main_node: Control = $".."
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if main_node.temperature_display_fin == -5.0 and (20.0-(main_node.temperature_level1*5)) == -5.0:
 		main_node.thermo_discovered_times += 1
 		queue_free()

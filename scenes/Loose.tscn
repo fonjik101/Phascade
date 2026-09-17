@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://daep64cbxcssy"]
+
+[ext_resource type="Script" uid="uid://ci228ypowb48f" path="res://scripts/loose.gd" id="1_2qmpc"]
+[ext_resource type="FontFile" uid="uid://da1qq31tovvf5" path="res://DS-DIGI.TTF" id="2_h435u"]
+[ext_resource type="Shader" uid="uid://dl8au5ica6f5r" path="res://shaders/Pixelate.gdshader" id="3_h435u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aaywf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1abgu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yt8fu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4umqm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pp5m5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g3p1g"]
+shader = ExtResource("3_h435u")
+shader_parameter/pixelation = 0.002000000095
+shader_parameter/opacity = 1.0
+
+[node name="Control" type="Control" unique_id=1788915878]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2qmpc")
+
+[node name="BlurRect" type="ColorRect" parent="." unique_id=1949626127]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=732646040]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.36296296
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 13
+theme_override_fonts/font = ExtResource("2_h435u")
+theme_override_font_sizes/font_size = 67
+text = "oh welp, you lost"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StartLabel" type="Button" parent="." unique_id=1037960746]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.65
+anchor_right = 1.0
+anchor_bottom = 0.7462963
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.69965345, 0.69965345, 0.69965345, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_h435u")
+theme_override_font_sizes/font_size = 40
+text = "play again"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitLabel" type="Button" parent="." unique_id=17879926]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8277778
+anchor_right = 1.0
+anchor_bottom = 0.92407405
+offset_top = -18.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.69803923, 0.69803923, 0.69803923, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_h435u")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_aaywf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1abgu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yt8fu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4umqm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pp5m5")
+text = "main menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScoreLabel" type="Label" parent="." unique_id=1564789449]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.3074074
+anchor_right = 1.0
+anchor_bottom = 0.37222221
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_h435u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_aaywf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pp5m5")
+text = "high score: 999"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1839910362]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.37222221
+anchor_right = 1.0
+anchor_bottom = 0.43703705
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_h435u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_aaywf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pp5m5")
+text = "score: 999"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Pixel" type="ColorRect" parent="." unique_id=2024930853]
+material = SubResource("ShaderMaterial_g3p1g")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="StartLabel" to="." method="_on_start_label_pressed"]
+[connection signal="pressed" from="QuitLabel" to="." method="_on_quit_label_pressed"]

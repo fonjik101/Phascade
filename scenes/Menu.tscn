@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b61jlerbtixbh" path="res://textures/backgrounds/background3.jpg" id="4_4umqm"]
 [ext_resource type="Texture2D" uid="uid://w1n21taba3bd" path="res://textures/backgrounds/background4.jpg" id="5_pp5m5"]
 [ext_resource type="Shader" uid="uid://c8c41ugsy4vsp" path="res://shaders/Blur.gdshader" id="6_el213"]
+[ext_resource type="Shader" uid="uid://dl8au5ica6f5r" path="res://shaders/Pixelate.gdshader" id="8_1abgu"]
 
 [sub_resource type="Animation" id="Animation_thu7x"]
 length = 0.001
@@ -109,6 +110,18 @@ shader_parameter/lod = 2.0000000298024
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pp5m5"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaywf"]
+bg_color = Color(0, 0, 0, 0.92156863)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1abgu"]
+shader = ExtResource("8_1abgu")
+shader_parameter/pixelation = 0.002000000095
+shader_parameter/opacity = 1.0
+
 [node name="Control" type="Control" unique_id=1788915878]
 layout_mode = 3
 anchors_preset = 15
@@ -117,6 +130,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7t7qg")
+speed = 10.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1503885220]
 modulate = Color(0.3, 0.3, 0.3, 1)
@@ -137,6 +151,7 @@ autoplay = &"background"
 speed_scale = 0.5
 
 [node name="BlurRect" type="ColorRect" parent="." unique_id=1949626127]
+visible = false
 material = SubResource("ShaderMaterial_rtd1e")
 layout_mode = 1
 anchors_preset = 15
@@ -146,6 +161,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TitleLabel" type="Label" parent="." unique_id=732646040]
+modulate = Color(1, 1, 1, 0.75686276)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -153,15 +169,32 @@ anchor_bottom = 0.36296296
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/shadow_outline_size = 13
 theme_override_fonts/font = ExtResource("1_xdvgc")
 theme_override_font_sizes/font_size = 90
 text = "phascade"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Line" type="Label" parent="." unique_id=1234034047]
+modulate = Color(1, 1, 1, 0.75686276)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.083333336
+anchor_right = 1.0
+anchor_bottom = 0.4462963
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_xdvgc")
+theme_override_font_sizes/font_size = 90
+text = "---------"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="Line" unique_id=1788419901]
+autostart = true
 
 [node name="StartLabel" type="Button" parent="." unique_id=1037960746]
 layout_mode = 1
@@ -171,8 +204,8 @@ anchor_right = 1.0
 anchor_bottom = 0.63148147
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(270, 26)
 theme_override_colors/font_color = Color(0.69965345, 0.69965345, 0.69965345, 1)
-theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("1_xdvgc")
 theme_override_font_sizes/font_size = 40
 text = "start"
@@ -182,18 +215,33 @@ metadata/_edit_use_anchors_ = true
 [node name="CreditsLabel" type="Button" parent="." unique_id=957094373]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.6962963
+anchor_left = 0.8666667
+anchor_top = 0.9462963
 anchor_right = 1.0
-anchor_bottom = 0.7925926
-offset_top = -17.0
-offset_bottom = -17.0
-grow_horizontal = 2
-grow_vertical = 2
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(36, 15)
 theme_override_colors/font_color = Color(0.69803923, 0.69803923, 0.69803923, 1)
-theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("1_xdvgc")
+theme_override_font_sizes/font_size = 20
+text = "credits"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TutorialLabel" type="Button" parent="." unique_id=690446882]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.66481483
+anchor_right = 1.0
+anchor_bottom = 0.76111114
+offset_bottom = -3.0517578e-05
+grow_vertical = 0
+pivot_offset = Vector2(270, 26)
+theme_override_colors/font_color = Color(0.69803923, 0.69803923, 0.69803923, 1)
 theme_override_fonts/font = ExtResource("1_xdvgc")
 theme_override_font_sizes/font_size = 40
-text = "credits"
+text = "TUTorial"
 flat = true
 metadata/_edit_use_anchors_ = true
 
@@ -207,8 +255,8 @@ offset_top = -18.0
 offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(270, 26)
 theme_override_colors/font_color = Color(0.69803923, 0.69803923, 0.69803923, 1)
-theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("1_xdvgc")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_aaywf")
@@ -223,7 +271,38 @@ metadata/_edit_use_anchors_ = true
 [node name="HighScoreLabel" type="Label" parent="." unique_id=1564789449]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.9351852
+anchor_top = 0.37407407
+anchor_right = 1.0
+anchor_bottom = 0.43888888
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_xdvgc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_aaywf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pp5m5")
+text = "high score"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CreditsPanel" type="Panel" parent="." unique_id=1439192360]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aaywf")
+
+[node name="Text" type="Label" parent="CreditsPanel" unique_id=1301409010]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -234,11 +313,32 @@ theme_override_fonts/font = ExtResource("1_xdvgc")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_aaywf")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pp5m5")
-text = "high score"
+text = "Credits:
+
+Glowstick model - ebuchij animeshnik
+Handprint texture - Phasmophobia wiki
+EMF model - UnFy KilianZ
+Laser Thermometer model - assetfactory
+Ds-Digital font - Dusit Supasawat
+Insence model - Dawnstar_Chronicles
+(full credits on itch.io)"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1924301536]
+
+[node name="Pixel" type="ColorRect" parent="." unique_id=1681584212]
+material = SubResource("ShaderMaterial_1abgu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="timeout" from="Line/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="StartLabel" to="." method="_on_start_label_pressed"]
 [connection signal="pressed" from="CreditsLabel" to="." method="_on_credits_label_pressed"]
+[connection signal="pressed" from="TutorialLabel" to="." method="_on_tutorial_label_pressed"]
 [connection signal="pressed" from="QuitLabel" to="." method="_on_quit_label_pressed"]

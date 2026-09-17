@@ -29,6 +29,7 @@ extends Control # класс нода к которому приклеплен �
 # = 1 - значение переменной
 var item_selected: int = 0 # перемення которая определяет какой предмет держит игрок
 var mouse_position: Vector2
+var chance: int = 100
 
 var activity_level: int = 0 # уровень активности емф (как близко игрок к улике)
 var temperature_level1: float = 0.0 # уровень активности градусника (как близко игрок к улике)
@@ -50,6 +51,7 @@ var uv_discovered: bool = false
 var thermo_discovered_times: int = 0
 
 var ghost_agression: float = 0.0
+var ghost_active: bool = false
 
 #выполняется только раз, при запуске сцены
 func _ready() -> void:
@@ -57,10 +59,29 @@ func _ready() -> void:
 	point1.global_position = Vector2(randi_range(40,500),randi_range(40,440))
 	point2.global_position = Vector2(randi_range(40,500),randi_range(40,440))
 	point3.global_position = Vector2(randi_range(40,500),randi_range(40,440))
+	$Point4.global_position = Vector2(randi_range(40,500),randi_range(40,440))
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 #выполнятся каждый кадр, НЕ КАЖДУЮ СЕКУНДУ, А КАЖДЫЙ КАДР!!!!!
 func _process(delta):
+	if !ghost_active:
+		ghost_agression += 0.01
+	if uv_discovered and !ghost_active:
+		ghost_agression += 0.02
+	if emf_discovered and !ghost_active:
+		ghost_agression += 0.02
+	if thermo_discovered and !ghost_active:
+		ghost_agression += 0.02
+	
+	if (chance < ghost_agression) or $TimeLabel.total_seconds < 10:
+		ghost_active = true
+		ghost_agression = 0
+		if $TimeLabel.total_seconds < 10:
+			$TimeLabel.modulate = Color(1.0, 0.0, 0.0, 1.0)
+	
+	if ghost_active:
+		$Black_Rect.visible = (randi_range(1,3) == 1)
+	
 	$NextLabel.visible = emf_discovered and uv_discovered and thermo_discovered
 	
 	emf_check.button_pressed = emf_discovered
@@ -123,6 +144,7 @@ func _check_point1():
 		emf_discovered = true
 
 func _check_point2():
+	point2.visible = true
 	item_texture.play("uv")
 	if handprint.modulate.a >= 1.0:
 		uv_discovered = true
@@ -145,7 +167,16 @@ func _on_item_button_5_pressed() -> void:
 
 
 func _on_next_label_pressed() -> void:
-	GlobalVars.score = 120 -$TimeLabel.total_seconds
+	GlobalVars.score += $TimeLabel.total_seconds
 	if GlobalVars.score > GlobalVars.high_score:
 		GlobalVars.high_score = GlobalVars.score
+		GlobalVars.write_save()
+		print("New High Score!")
+	print("Added: ", 120 -$TimeLabel.total_seconds, " To: ", GlobalVars.score)
 	get_tree().change_scene_to_file("res://scenes/Main.tscn")
+
+
+func _on_timer_timeout() -> void:
+	chance = randi_range(10,100)
+	if $TimeLabel.total_seconds == 0:
+		get_tree().change_scene_to_file("res://scenes/Loose.tscn")
