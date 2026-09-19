@@ -1,22 +1,29 @@
 [gd_scene format=3 uid="uid://gk100ta4tugs"]
 
 [ext_resource type="Script" uid="uid://cvovv2cj5hnd3" path="res://scripts/main.gd" id="1_ma7h6"]
+[ext_resource type="AudioStream" uid="uid://d1in6mskec7pl" path="res://sounds/Press.wav" id="2_8cp6k"]
 [ext_resource type="Texture2D" uid="uid://f65vr6n1fr1s" path="res://textures/backgrounds/background1.jpg" id="2_20pc6"]
 [ext_resource type="Texture2D" uid="uid://bfofhe2kjssb2" path="res://icon.svg" id="2_r0du0"]
-[ext_resource type="Shader" uid="uid://c8c41ugsy4vsp" path="res://shaders/Blur.gdshader" id="3_bjd11"]
+[ext_resource type="AudioStream" uid="uid://dx3rafp4oib6p" path="res://sounds/Woosh.wav" id="3_8b871"]
 [ext_resource type="Script" uid="uid://cr5gemhqiwe2i" path="res://scenes/background.gd" id="3_ma7h6"]
 [ext_resource type="Texture2D" uid="uid://cd7fc7rfl887a" path="res://textures/emf/emf_0.png" id="3_trn2v"]
 [ext_resource type="Texture2D" uid="uid://b3v2uiu73qmir" path="res://textures/emf/emf_1.png" id="4_03owx"]
 [ext_resource type="Script" uid="uid://cxuk5k4s83lvr" path="res://scripts/point_1.gd" id="4_bjd11"]
+[ext_resource type="AudioStream" uid="uid://bi024l1a8v2h1" path="res://sounds/Hover.wav" id="4_pdwbg"]
+[ext_resource type="Texture2D" uid="uid://bqamafgocustv" path="res://textures/nv_backgrounds/background1.jpg" id="4_pnhog"]
+[ext_resource type="AudioStream" uid="uid://wq6h53ljregq" path="res://sounds/Click.wav" id="5_5grtr"]
+[ext_resource type="Script" uid="uid://b353edbrd3khn" path="res://scripts/point_ghost.gd" id="5_pnhog"]
 [ext_resource type="Texture2D" uid="uid://cmn3dnc1fi7s3" path="res://textures/emf/emf_2.png" id="5_wkp8b"]
 [ext_resource type="Script" uid="uid://b6x4bhn1ulpcv" path="res://scripts/point_2.gd" id="6_3p2gp"]
 [ext_resource type="Texture2D" uid="uid://ctrenvs8ite8f" path="res://textures/emf/emf_3.png" id="6_20pc6"]
+[ext_resource type="Texture2D" uid="uid://b0tdu7li6m85g" path="res://textures/scary_ghost.png" id="6_hq6as"]
 [ext_resource type="Texture2D" uid="uid://cuf7mp81opljd" path="res://textures/emf/emf_4.png" id="7_5vvyt"]
 [ext_resource type="Texture2D" uid="uid://bj3qy5we5wtch" path="res://textures/uv/Handprint.png" id="7_yxlcp"]
 [ext_resource type="Texture2D" uid="uid://7ji7qp4w7jsx" path="res://textures/emf/emf_5.png" id="8_c6i3y"]
 [ext_resource type="Script" uid="uid://bg5uk8cj5qtpe" path="res://scripts/point_3.gd" id="8_fs0b5"]
 [ext_resource type="Texture2D" uid="uid://sbtpv2cfeke1" path="res://textures/emf/emf_icon.png" id="9_03owx"]
 [ext_resource type="Script" uid="uid://cbqvtvc1vos3o" path="res://scripts/point_4.gd" id="9_36rkl"]
+[ext_resource type="Shader" uid="uid://rqlx4dujf560" path="res://shaders/Shaking.gdshader" id="10_g6wdg"]
 [ext_resource type="Shader" uid="uid://cwvdg4pswd1xr" path="res://shaders/vignette.gdshader" id="12_qmy6f"]
 [ext_resource type="Texture2D" uid="uid://dhmdaepemcd4g" path="res://textures/uv/uv1.png" id="15_1iba3"]
 [ext_resource type="Texture2D" uid="uid://uawv26a2lbel" path="res://textures/uv/uv_icon.png" id="16_cvmbd"]
@@ -28,14 +35,16 @@
 [ext_resource type="Script" uid="uid://doecqbdk7617m" path="res://scenes/time_counter.gd" id="23_ebg2g"]
 [ext_resource type="FontFile" uid="uid://da1qq31tovvf5" path="res://DS-DIGI.TTF" id="23_fs0b5"]
 [ext_resource type="Texture2D" uid="uid://cklvr1qd83sxd" path="res://textures/thermo/thermo_icon.png" id="24_36rkl"]
+[ext_resource type="Texture2D" uid="uid://cuxoxisbc22is" path="res://textures/camera/main.png" id="25_v0vrg"]
+[ext_resource type="Texture2D" uid="uid://4jghv8m5jry2" path="res://textures/camera/mask.png" id="26_dg70y"]
+[ext_resource type="Shader" uid="uid://brxq7gcc83phn" path="res://shaders/Mask.gdshader" id="26_pnhog"]
 [ext_resource type="Shader" uid="uid://dl8au5ica6f5r" path="res://shaders/Pixelate.gdshader" id="29_e2s0e"]
+[ext_resource type="Texture2D" uid="uid://dhhoj43h7jbm7" path="res://textures/camera/camera_icon.png" id="32_2c4at"]
+[ext_resource type="Texture2D" uid="uid://df4u10xwltqtg" path="res://textures/incense/incense_0.png" id="35_8b871"]
+[ext_resource type="Texture2D" uid="uid://c1rih08w0a3ap" path="res://textures/incense/incense_icon.png" id="40_pdwbg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6temw"]
 radius = 100.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmy6f"]
-shader = ExtResource("3_bjd11")
-shader_parameter/lod = 2.0000000298024
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_03owx"]
 radius = 1250.0
@@ -48,6 +57,11 @@ radius = 750.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5vvyt"]
 radius = 500.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hq6as"]
+shader = ExtResource("10_g6wdg")
+shader_parameter/amplitude = 0.10000000475
+shader_parameter/speed = 2.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gsxep"]
 shader = ExtResource("12_qmy6f")
@@ -110,11 +124,103 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6temw"]
+size = Vector2(150, 150)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pnhog"]
+shader = ExtResource("26_pnhog")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v0vrg"]
 shader = ExtResource("29_e2s0e")
 shader_parameter/pixelation = 0.002000000095
 shader_parameter/opacity = 1.0
+
+[sub_resource type="Animation" id="Animation_yc7uc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black_Rect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_dhqfv"]
+resource_name = "in_load"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black_Rect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_101rs"]
+resource_name = "out_load"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black_Rect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(4.222422, 0.2),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(4.222422, 0.2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dg70y"]
+_data = {
+&"RESET": SubResource("Animation_yc7uc"),
+&"in_load": SubResource("Animation_dhqfv"),
+&"out_load": SubResource("Animation_101rs")
+}
 
 [node name="Main_Node" type="Control" unique_id=1905751114]
 layout_mode = 3
@@ -125,18 +231,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ma7h6")
 
-[node name="PointGhost" type="Sprite2D" parent="." unique_id=20355741]
-position = Vector2(453.99997, 122)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_r0du0")
-script = ExtResource("6_3p2gp")
+[node name="Press" type="AudioStreamPlayer" parent="." unique_id=1781484658]
+stream = ExtResource("2_8cp6k")
+max_polyphony = 100
 
-[node name="Level5" type="Area2D" parent="PointGhost" unique_id=566938187]
+[node name="Woosh" type="AudioStreamPlayer" parent="." unique_id=1767490526]
+stream = ExtResource("3_8b871")
+pitch_scale = 0.75
+max_polyphony = 100
 
-[node name="Shape" type="CollisionShape2D" parent="PointGhost/Level5" unique_id=1857057291]
-shape = SubResource("CircleShape2D_6temw")
+[node name="Hover" type="AudioStreamPlayer" parent="." unique_id=1416113056]
+stream = ExtResource("4_pdwbg")
+pitch_scale = 0.7
+max_polyphony = 100
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1049714646]
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1507860295]
+stream = ExtResource("5_5grtr")
+max_polyphony = 100
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=506786431]
 modulate = Color(0.3, 0.3, 0.3, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -144,30 +257,62 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("4_pnhog")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=1389567850]
+z_index = 1
+copy_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BackBufferCopy" unique_id=1049714646]
+modulate = Color(0.3, 0.3, 0.3, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 340.0
+offset_bottom = 340.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_20pc6")
 script = ExtResource("3_ma7h6")
 
-[node name="BlurRect" type="ColorRect" parent="." unique_id=2062259047]
-material = SubResource("ShaderMaterial_qmy6f")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Black_Rect" type="ColorRect" parent="." unique_id=90707691]
+[node name="PointGhost" type="CharacterBody2D" parent="." unique_id=1325992860]
 visible = false
+position = Vector2(210, 263)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("5_pnhog")
+
+[node name="Level5" type="Area2D" parent="PointGhost" unique_id=566938187]
+
+[node name="Shape" type="CollisionShape2D" parent="PointGhost/Level5" unique_id=1857057291]
+shape = SubResource("CircleShape2D_6temw")
+
+[node name="TextureGhost" type="Sprite2D" parent="PointGhost" unique_id=1656458668]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_hq6as")
+
+[node name="Shape" type="CollisionShape2D" parent="PointGhost" unique_id=1664397659]
+shape = SubResource("CircleShape2D_6temw")
+
+[node name="HuntingTimer" type="Timer" parent="PointGhost" unique_id=2072002637]
+wait_time = 15.0
+one_shot = true
+
+[node name="Black_Rect2" type="ColorRect" parent="." unique_id=739488664]
+visible = false
+modulate = Color(0, 0, 0, 1)
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Point1" type="Sprite2D" parent="." unique_id=1866922068]
 visible = false
+z_index = 1
 position = Vector2(130, 151)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_r0du0")
@@ -262,7 +407,25 @@ shape = SubResource("CircleShape2D_5vvyt")
 [node name="Shape" type="CollisionShape2D" parent="Point4/Level5" unique_id=760990312]
 shape = SubResource("CircleShape2D_6temw")
 
+[node name="HuntingTimeLabel" type="Label" parent="." unique_id=541371664]
+visible = false
+modulate = Color(1, 1, 1, 0.12941177)
+z_index = 1
+material = SubResource("ShaderMaterial_hq6as")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("23_fs0b5")
+theme_override_font_sizes/font_size = 275
+text = "10.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VignetteRect" type="ColorRect" parent="." unique_id=870257659]
+z_index = 1
 material = SubResource("ShaderMaterial_gsxep")
 layout_mode = 1
 anchors_preset = 15
@@ -273,6 +436,7 @@ grow_vertical = 2
 
 [node name="Point2" type="Sprite2D" parent="." unique_id=355766221]
 visible = false
+z_index = 1
 position = Vector2(453.99997, 122)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("6_3p2gp")
@@ -308,6 +472,7 @@ texture = ExtResource("7_yxlcp")
 
 [node name="Item_Cursor" type="CharacterBody2D" parent="." unique_id=64777036 groups=["item"]]
 visible = false
+z_index = 1
 
 [node name="Item_Texture" type="AnimatedSprite2D" parent="Item_Cursor" unique_id=1295675188]
 scale = Vector2(0.2, 0.2)
@@ -335,9 +500,36 @@ text = "-10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Item_Cursor2" type="Sprite2D" parent="." unique_id=460591383]
+[node name="Camcoder_Cursor" type="Sprite2D" parent="." unique_id=460591383]
+z_index = 1
+position = Vector2(293, 252)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("25_v0vrg")
+
+[node name="Camcoder_Mask" type="Sprite2D" parent="Camcoder_Cursor" unique_id=230857085]
+material = SubResource("ShaderMaterial_pnhog")
+texture = ExtResource("26_dg70y")
+
+[node name="i_hate_my_life" type="CharacterBody2D" parent="Camcoder_Cursor" unique_id=1617402826 groups=["camera"]]
+
+[node name="Collision" type="CollisionShape2D" parent="Camcoder_Cursor/i_hate_my_life" unique_id=1507715177]
+shape = SubResource("RectangleShape2D_6temw")
+
+[node name="Insence_Cursor" type="CharacterBody2D" parent="." unique_id=877918572 groups=["insence"]]
+z_index = 1
+position = Vector2(422, 430)
+scale = Vector2(0.5, 0.5)
+
+[node name="Texture" type="Sprite2D" parent="Insence_Cursor" unique_id=1562175123]
+position = Vector2(0, 88)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("35_8b871")
+
+[node name="Collision" type="CollisionShape2D" parent="Insence_Cursor" unique_id=784601769]
+shape = SubResource("RectangleShape2D_6temw")
 
 [node name="Item_Button1" type="Button" parent="." unique_id=962513316]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.027777778
@@ -351,6 +543,7 @@ expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Item_Button2" type="Button" parent="." unique_id=1695142856]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.19444445
@@ -364,6 +557,7 @@ expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Item_Button3" type="Button" parent="." unique_id=425090343]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3611111
@@ -377,6 +571,7 @@ expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Item_Button4" type="Button" parent="." unique_id=33406707]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.6944444
@@ -385,11 +580,12 @@ anchor_right = 0.8055556
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("2_r0du0")
+icon = ExtResource("32_2c4at")
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Item_Button5" type="Button" parent="." unique_id=1428831695]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.8611111
@@ -398,25 +594,12 @@ anchor_right = 0.9722222
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("2_r0du0")
+icon = ExtResource("40_pdwbg")
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Item_Button5" unique_id=409042951]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("23_fs0b5")
-theme_override_font_sizes/font_size = 36
-text = "3"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="TimeLabel" type="Label" parent="." unique_id=1831973052]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.044444446
@@ -434,6 +617,7 @@ metadata/_edit_use_anchors_ = true
 autostart = true
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=247007685]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -446,6 +630,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="EmfCheck" type="CheckBox" parent="." unique_id=135299790]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -457,6 +642,7 @@ text = "EMF Level 5"
 metadata/_edit_use_anchors_ = true
 
 [node name="UvCheck" type="CheckBox" parent="." unique_id=1084960230]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.05925926
@@ -469,6 +655,7 @@ text = "UV Handprint"
 metadata/_edit_use_anchors_ = true
 
 [node name="TempCheck" type="CheckBox" parent="." unique_id=1307825488]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.11851852
@@ -482,6 +669,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="NextLabel" type="Button" parent="." unique_id=456695898]
 visible = false
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.78518516
@@ -508,6 +696,28 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Black_Rect" type="ColorRect" parent="." unique_id=90707691]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=397023655]
+position = Vector2(270, 270)
+zoom = Vector2(2, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1614101814]
+libraries/ = SubResource("AnimationLibrary_dg70y")
+autoplay = &"in_load"
+
+[connection signal="body_entered" from="PointGhost/Level5" to="PointGhost" method="_on_level_5_body_entered"]
+[connection signal="body_exited" from="PointGhost/Level5" to="PointGhost" method="_on_level_5_body_exited"]
+[connection signal="timeout" from="PointGhost/HuntingTimer" to="PointGhost" method="_on_hunting_timer_timeout"]
 [connection signal="body_entered" from="Point1/Level1" to="Point1" method="_on_level_1_body_entered"]
 [connection signal="body_exited" from="Point1/Level1" to="Point1" method="_on_level_1_body_exited"]
 [connection signal="body_entered" from="Point1/Level2" to="Point1" method="_on_level_2_body_entered"]

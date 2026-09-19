@@ -15,9 +15,14 @@ run/main_scene="uid://c784cylfva0t3"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://ch0864auyh8xl"
 
+[audio]
+
+buses/default_bus_layout="uid://orqj6m4ja88o"
+
 [autoload]
 
 GlobalVars="*uid://dxvfmfei25bij"
+Music="*uid://bk57oqji5vdop"
 
 [display]
 
@@ -29,6 +34,8 @@ window/stretch/mode="viewport"
 [global_group]
 
 item=""
+insence=""
+camera=""
 
 [input]
 

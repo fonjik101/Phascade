@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://daep64cbxcssy"]
 
 [ext_resource type="Script" uid="uid://ci228ypowb48f" path="res://scripts/loose.gd" id="1_2qmpc"]
+[ext_resource type="Shader" uid="uid://d2b4cglmtxyqd" path="res://shaders/Wiggle.gdshader" id="2_g3p1g"]
 [ext_resource type="FontFile" uid="uid://da1qq31tovvf5" path="res://DS-DIGI.TTF" id="2_h435u"]
 [ext_resource type="Shader" uid="uid://dl8au5ica6f5r" path="res://shaders/Pixelate.gdshader" id="3_h435u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4apa"]
+shader = ExtResource("2_g3p1g")
+shader_parameter/jiggle = 1.0
+shader_parameter/speed = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aaywf"]
 
@@ -38,6 +44,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TitleLabel" type="Label" parent="." unique_id=732646040]
+material = SubResource("ShaderMaterial_u4apa")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -63,6 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 0.7462963
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(270, 26)
 theme_override_colors/font_color = Color(0.69965345, 0.69965345, 0.69965345, 1)
 theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("2_h435u")
@@ -81,6 +89,7 @@ offset_top = -18.0
 offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(270, 26)
 theme_override_colors/font_color = Color(0.69803923, 0.69803923, 0.69803923, 1)
 theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("2_h435u")

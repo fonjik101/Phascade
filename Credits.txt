@@ -3,4 +3,5 @@ Handprint texture - Phasmophobia wiki
 EMF model - UnFy KilianZ (https://skfb.ly/o7D99)
 Laser Thermometer model - assetfactory (https://skfb.ly/onRpu)
 Ds-Digital font - Dusit Supasawat (https://www.dafont.com/ds-digital.font)
-Insence model - Dawnstar_Chronicles (https://skfb.ly/oS8BI)
+Camcoder model - Ammonite (https://skfb.ly/oMzXK)
+UI Sounds - Sadly I lost the link, but the pack is colled "Digital UI Pack"

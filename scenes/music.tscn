@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bk57oqji5vdop"]
+
+[ext_resource type="AudioStream" uid="uid://b036ktjeiki7y" path="res://sounds/Calm_Loop.wav" id="1_ibx2e"]
+[ext_resource type="Script" uid="uid://mr8s5gl4crr1" path="res://scripts/music.gd" id="1_qnihg"]
+[ext_resource type="AudioStream" uid="uid://cdw5ks7yga40" path="res://sounds/Danger_Loop.wav" id="2_qnihg"]
+
+[node name="Music" type="Node" unique_id=1414828469]
+script = ExtResource("1_qnihg")
+
+[node name="Calm" type="AudioStreamPlayer" parent="." unique_id=2067624758]
+stream = ExtResource("1_ibx2e")
+autoplay = true
+bus = &"Music"
+
+[node name="Danger" type="AudioStreamPlayer" parent="." unique_id=943491291]
+stream = ExtResource("2_qnihg")
+autoplay = true
+bus = &"Music"
