@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="Phasmo Arcade"
-run/main_scene="uid://c784cylfva0t3"
+run/main_scene="uid://chd7r6gefmfv2"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="uid://ch0864auyh8xl"
 
 [audio]
@@ -54,3 +56,4 @@ Primary={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
